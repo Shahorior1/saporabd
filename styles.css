@@ -1,0 +1,208 @@
+/* Custom styles for SapCry e-commerce website */
+
+/* Font imports (Bengali and English) */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+}
+
+/* Header styling */
+header {
+    min-height: 80px;
+    position: relative;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+header img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+header .flex-1 {
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+/* Background image styles */
+.bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-image-header {
+    background-image: url('images/sapora\ BD.png');
+    background-size: contain;
+    opacity: 0.95;
+}
+
+.bg-image-hero {
+    background-image: url('images/Slider.png');
+    opacity: 0.15;
+}
+
+/* Hero section styling */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section .grid {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-image-grid img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image-grid img:hover {
+    transform: scale(1.05) rotate(0) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    position: relative;
+}
+
+.hero-image-grid .transform {
+    transition: all 0.5s ease;
+}
+
+/* Category card styling */
+.category-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.25rem);
+}
+
+.category-icon {
+    background-color: rgba(34, 197, 94, 0.1);
+    border-radius: 9999px;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+
+.category-icon img {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Bengali text styling */
+h1, h2, h3, .bengali-text {
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+/* Product card hover effect */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Bestseller product image styling */
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+/* Sold out product overlay */
+.product-card .sold-out-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    z-index: 5;
+}
+
+/* Custom button animations */
+button {
+    transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #22c55e;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #16a34a;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100%;
+        background-color: white;
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+    
+    /* Mobile-specific bestseller product images */
+    .product-card img {
+        height: 180px;
+    }
+}
+
+/* Responsive image adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .product-card img {
+        height: 200px;
+    }
+}

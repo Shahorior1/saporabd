@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Complete - Sapora BD | Bengali Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .order-table th, .order-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .order-table th {
+            font-weight: 500;
+            color: #4b5563;
+        }
+        .order-table .total-row td {
+            font-weight: bold;
+            border-top: 2px solid #e5e7eb;
+        }
+        .success-message {
+            border: 2px dashed #4ade80;
+            background-color: #f0fdf4;
+            color: #16a34a;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1px;
+            background-color: #e5e7eb;
+            margin-bottom: 24px;
+        }
+        .info-cell {
+            background-color: white;
+            padding: 16px;
+        }
+        .info-label {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .info-value {
+            font-weight: 500;
+        }
+        .price-value {
+            color: #f97316;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex items-center">
+            <a href="index.html" class="flex items-center">
+                <span class="text-xl font-semibold">Sapora BD</span>
+            </a>
+            
+            <nav class="ml-8 flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-green-500">Home</a>
+                <a href="shop.html" class="text-gray-700 hover:text-green-500">Shop</a>
+            </nav>
+            
+            <div class="flex-1 max-w-md mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Search products..." class="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-green-500">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <a href="cart.html" class="ml-6 text-gray-700 hover:text-green-500 relative">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Checkout Progress Indicator -->
+    <div class="w-full bg-blue-700 py-4 text-center">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-center text-white text-lg">
+                <a href="cart.html" class="text-white hover:text-gray-200">SHOPPING CART</a>
+                <span class="mx-3">→</span>
+                <a href="checkout.html" class="text-white hover:text-gray-200">CHECKOUT</a>
+                <span class="mx-3">→</span>
+                <span class="text-white font-bold border-b-2 border-white">ORDER COMPLETE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Complete Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-3xl mx-auto">
+            <!-- Success Message -->
+            <div class="success-message mb-8">
+                <p class="text-green-600 text-lg font-medium">Thank you. Your order has been received.</p>
+            </div>
+            
+            <!-- Order Information Grid -->
+            <div class="info-grid mb-8">
+                <div class="info-cell">
+                    <div class="info-label">Date:</div>
+                    <div id="order-date" class="info-value">April 30, 2023</div>
+                </div>
+                <div class="info-cell">
+                    <div class="info-label">Total:</div>
+                    <div id="order-total" class="info-value">2,700৳</div>
+                </div>
+                <div class="info-cell">
+                    <div class="info-label">Payment method:</div>
+                    <div id="payment-method" class="info-value">Cash on delivery</div>
+                </div>
+            </div>
+            
+            <p class="mb-8 text-sm">Pay with cash upon delivery.</p>
+            
+            <!-- Order Details -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-6">ORDER DETAILS</h2>
+                
+                <table class="order-table w-full">
+                    <thead>
+                        <tr>
+                            <th>PRODUCT</th>
+                            <th class="text-right">TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-items">
+                        <!-- Items will be dynamically inserted here -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Subtotal:</td>
+                            <td id="order-subtotal" class="text-right">2,700৳</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping:</td>
+                            <td id="order-shipping" class="text-right">ফ্রি ডেলিভারি</td>
+                        </tr>
+                        <tr>
+                            <td>Payment method:</td>
+                            <td id="payment-method-row" class="text-right">Cash on delivery</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>TOTAL:</td>
+                            <td id="order-total-row" class="text-right price-value">2,700৳</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
+            <!-- Order Notes (if available) -->
+            <div id="order-notes-section" class="mb-8 hidden">
+                <h2 class="text-xl font-semibold mb-6">ORDER NOTES</h2>
+                <div id="order-notes" class="p-4 bg-gray-50 rounded-md text-gray-700">
+                    <!-- Order notes will be displayed here -->
+                </div>
+            </div>
+            
+            <!-- Billing Address -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-6">BILLING ADDRESS</h2>
+                <div id="billing-info">
+                    <p id="shipping-name" class="mb-1">sadik</p>
+                    <p id="shipping-location" class="mb-1">ajeb</p>
+                    <p id="shipping-phone" class="mb-1">01992873773</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-6 border-t mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <!-- Company Info -->
+                <div>
+                    <a href="index.html" class="flex items-center mb-4">
+                        <span class="text-xl font-semibold">Sapora BD</span>
+                    </a>
+                    <p class="text-gray-600 text-sm mb-4">Quality Bengali products with reliable service - your trusted partner</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-green-500">Home</a></li>
+                        <li><a href="shop.html" class="text-gray-600 hover:text-green-500">Shop</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-green-500">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-green-500">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="font-bold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-green-500">FAQ</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600">123 Street, Dhaka, Bangladesh</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600">+880 1700 000000</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600">info@saporabd.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-6 border-t border-gray-200 text-center">
+                <p class="text-gray-600 text-sm">© 2023 Sapora BD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-4 right-4 bg-gray-800 text-white p-2 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="order-complete.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html> 

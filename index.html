@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapora BD  - Bengali Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm relative">
+        <div class="bg-image bg-image-header"></div>
+        <div class="container mx-auto px-4 py-4 flex items-center relative z-10">
+            <a href="/" class="flex items-center">
+                <span class="text-xl font-semibold">Sapora BD</span>
+            </a>
+            
+            <nav class="ml-8 flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-green-500">Home</a>
+                <a href="shop.html" class="text-gray-700 hover:text-green-500">Shop</a>
+            </nav>
+            
+            <div class="flex-1 max-w-md mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Search products..." class="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-green-500">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <a href="cart.html" class="ml-6 text-gray-700 hover:text-green-500 relative">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 bg-gray-100 relative hero-section">
+        <div class="bg-image bg-image-hero"></div>
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
+            <div>
+                <h1 class="text-4xl font-bold mb-4">সর্বদাই বিশুদ্ধও খাঁটি পণ্য পৌঁছে দিতে অঙ্গীকারবদ্ধ</h1>
+                <p class="text-gray-600 mb-6 text-lg">Discover authentic and pure Bengali products directly from trusted sources.</p>
+                <p class="text-gray-500 mb-6 font-medium">→Sapora BD products</p>
+                <div class="flex items-center justify-center space-x-6 mb-8">
+                    <div class="flex items-center">
+                        <img src="images/Free-Delivery.jpg" alt="Free Delivery" class="h-8 mr-2">
+                        <span class="text-sm font-medium">Free Delivery</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-sm font-medium">100% Authentic</span>
+                    </div>
+                </div>
+                <a href="shop.html" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-md font-medium transition duration-300 ease-in-out transform hover:scale-105">Shop Now</a>
+            </div>
+            <div class="hidden md:block hero-image-grid">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="transform rotate-3 rounded-lg overflow-hidden shadow-lg">
+                        <img src="images/Ada-pauder.jpg" alt="Bengali Pitha" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="transform -rotate-3 rounded-lg overflow-hidden shadow-lg mt-8">
+                        <img src="images/Mashroom.jpg" alt="Bengali Food" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="transform -rotate-6 rounded-lg overflow-hidden shadow-lg -mt-4">
+                        <img src="images/bengali-snacks.png" alt="Bengali Sweets" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="transform rotate-6 rounded-lg overflow-hidden shadow-lg mt-4">
+                        <img src="images/tetuler-acar-400grm.jpg" alt="Bengali Pickles" class="w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestseller Products -->
+    <section class="py-16 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold">Bestseller <span class="text-orange-500">Product</span></h2>
+                <a href="shop.html" class="text-gray-600 hover:text-green-500">SHOW ALL PRODUCTS</a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Product 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/Nokshi-pitha.jpg" alt="ফিঙ্গার পিঠা : ১ কেজি" class="w-full object-cover">
+                        <div class="p-4">
+                            <p class="text-gray-500 text-sm">Others</p>
+                            <h3 class="font-medium">ফিঙ্গার পিঠা : ১ কেজি</h3>
+                            <p class="text-green-600 font-bold mt-2">700৳</p>
+                            <div class="mt-4">
+                                <button class="bg-orange-500 hover:bg-orange-600 text-white w-full px-4 py-2 rounded transition">ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/Jhinuk-pitha-1kg.jpg" alt="নকশি পিঠা : ১ কেজি" class="w-full object-cover">
+                        <div class="p-4">
+                            <p class="text-gray-500 text-sm">Others</p>
+                            <h3 class="font-medium">নকশি পিঠা : ১ কেজি</h3>
+                            <p class="text-green-600 font-bold mt-2">700৳</p>
+                            <div class="mt-4">
+                                <button class="bg-orange-500 hover:bg-orange-600 text-white w-full px-4 py-2 rounded transition">ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/Panir-hafkg.jpg" alt="পেস্তু ভর্তা ও মাঠা চিজ কেকসমূহী" class="w-full object-cover">
+                        <div class="p-4">
+                            <p class="text-gray-500 text-sm">Others</p>
+                            <h3 class="font-medium">পেস্তু ভর্তা ও মাঠা চিজ কেকসমূহী</h3>
+                            <p class="text-green-600 font-bold mt-2">1,100৳</p>
+                            <div class="mt-4">
+                                <button class="bg-orange-500 hover:bg-orange-600 text-white w-full px-4 py-2 rounded transition">ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/tetuler-acar-400grm.jpg" alt="এরিশ মিষ্টি : ১ পাউন্ড রসে মাখা" class="w-full object-cover">
+                        <div class="sold-out-label">SOLD OUT</div>
+                        <div class="p-4">
+                            <p class="text-gray-500 text-sm">Others</p>
+                            <h3 class="font-medium">এরিশ মিষ্টি : ১ পাউন্ড রসে মাখা</h3>
+                            <p class="text-gray-600 font-bold mt-2"><s>1,300৳</s> <span class="text-green-600">1,300৳</span></p>
+                            <div class="mt-4">
+                                <button class="bg-gray-300 text-gray-600 w-full px-4 py-2 rounded cursor-not-allowed">READ MORE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/Bashpata-campa.jpg" alt="হরলিক্স কম্বো" class="w-full object-cover">
+                        <div class="p-4">
+                            <p class="text-gray-500 text-sm">Others</p>
+                            <h3 class="font-medium">হরলিক্স কম্বো</h3>
+                            <p class="text-green-600 font-bold mt-2">1,350৳</p>
+                            <div class="mt-4">
+                                <button class="bg-orange-500 hover:bg-orange-600 text-white w-full px-4 py-2 rounded transition">ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop by Category -->
+    <section class="py-16 bg-gray-100 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold">Shop by Category</h2>
+                <p class="text-gray-600 mt-2 md:mt-0">Browse our wide range of authentic Bengali products</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="images/icons8-pie-50.png.jpg" alt="Pitha">
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">পিঠা | Pitha</h3>
+                    <p class="text-gray-600 text-sm mb-4">Traditional Bengali rice cakes</p>
+                    <a href="/category/pitha" class="text-green-500 hover:text-green-600 font-medium">Browse Products</a>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="images/icons8-honey-50.png.jpg" alt="Sweets">
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">মিষ্টি | Sweets</h3>
+                    <p class="text-gray-600 text-sm mb-4">Bengali sweet delicacies</p>
+                    <a href="/category/sweets" class="text-green-500 hover:text-green-600 font-medium">Browse Products</a>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="images/icons8-pickles-50.png.jpg" alt="Chatni">
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">চাটনি | Chatni</h3>
+                    <p class="text-gray-600 text-sm mb-4">Dried fish and vegetable preparations</p>
+                    <a href="/category/chatni" class="text-green-500 hover:text-green-600 font-medium">Browse Products</a>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="images/icons8-fruits-50-1.png.jpg" alt="Others">
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Others</h3>
+                    <p class="text-gray-600 text-sm mb-4">More authentic Bengali specialties</p>
+                    <a href="/category/others" class="text-green-500 hover:text-green-600 font-medium">Browse Products</a>
+                </div>
+            </div>
+
+            <!-- <div class="text-center mt-10">
+                <a href="/Categories" class="inline-block bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition">View All Categories</a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Our Products -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold">Our Products</h2>
+                <p class="text-gray-600 mt-2 md:mt-0">Authentic Bengali products made with love and tradition</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Sold out</span>
+                        <img src="images/Khejur-gur.jpg" alt="খেজুর গুড় ও নাট মিক্স কোকোনাট বরফি" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">খেজুর গুড় ও নাট মিক্স কোকোনাট বরফি</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">1,300৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-gray-200 text-gray-500 px-4 py-2 rounded cursor-not-allowed">Sold Out</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">-19%</span>
+                        <img src="images/Gramin-pitha-2kg-pack.jpg" alt="গ্রামীন পিঠার ২ কেজির কম্বো প্যাক – মিষ্টি ছাড়া" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">গ্রামীন পিঠার ২ কেজির কম্বো প্যাক – মিষ্টি ছাড়া</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">1,300৳ <span class="line-through text-gray-400 text-sm ml-2">1,600৳</span></p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Read more</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/Jhinuk-pitha-1kg.jpg" alt="ঝিনুক পিঠা ১ কেজি" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">ঝিনুক পিঠা ১ কেজি</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">700৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Add to Cart</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/tetuler-acar-400grm.jpg" alt="তেঁতুলের আচার 400 গ্রাম" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">তেঁতুলের আচার 400 গ্রাম</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">399৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Add to Cart</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/Nokshi-pitha.jpg" alt="নকশি পিঠা ১ কেজি" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">নকশি পিঠা ১ কেজি</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">700৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Add to Cart</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Sold out</span>
+                        <img src="images/Nokshi-pitha-combo.jpg" alt="নকশি পিঠা কম্বো" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">নকশি পিঠা কম্বো</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">1,350৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-gray-200 text-gray-500 px-4 py-2 rounded cursor-not-allowed">Sold Out</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Sold out</span>
+                        <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">Ponir</span>
+                        <img src="images/Panir-hafkg.jpg" alt="পনির প্রতি কেজি" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">পনির প্রতি কেজি</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">1,499৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Read more</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <span class="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">Ponir</span>
+                        <img src="images/Panir-hafkg.jpg  " alt="পনির হাফ কেজি" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">পনির হাফ কেজি</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">800৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Read more</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/putimach.jpg" alt="পুটিমাছের চ্যাঁপা" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">পুটিমাছের চ্যাঁপা</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">1,999৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Add to Cart</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/Bashpata-campa.jpg" alt="বাঁশপাতা চ্যাঁপা" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">বাঁশপাতা চ্যাঁপা</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">1,299৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Add to Cart</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/Bashpata-campa-1.jpg" alt="বাঁশপাতা চ্যাঁপা – 500 GM + পুটিমাছের চ্যাঁপা- 500 GM" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">বাঁশপাতা চ্যাঁপা – 500 GM + পুটিমাছের চ্যাঁপা- 500 GM</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">1,599৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Add to Cart</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white product-card">
+                    <div class="relative">
+                        <img src="images/hate-kata-shemai-1.jpeg.jpg" alt="হাতে কাটা সেমাই" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 flex space-x-1">
+                            <button class="bg-white rounded-full w-7 h-7 flex items-center justify-center shadow-sm" title="Compare">
+                                <i class="fas fa-random text-gray-500 text-xs"></i>
+                            </button>
+                            <button class="bg-white rounded-full w-7 h-7 flex items-center justify-center shadow-sm" title="Quick view">
+                                <i class="fas fa-eye text-gray-500 text-xs"></i>
+                            </button>
+                            <button class="bg-white rounded-full w-7 h-7 flex items-center justify-center shadow-sm" title="Add to wishlist">
+                                <i class="far fa-heart text-gray-500 text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium">হাতে কাটা সেমাই</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Others</span>
+                        </div>
+                        <p class="text-green-600 font-bold mt-2">799৳</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2">
+                            <button class="bg-white border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition">Add to Cart</button>
+                            <button class="bg-white border border-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition">Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="shop.html" class="inline-block bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition">Shop All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-2 text-center">Why Choose Sapora BD</h2>
+            <p class="text-gray-600 text-center mb-10">We are committed to providing the best experience for our customers</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">100% Authentic</h3>
+                    <p class="text-gray-600 text-sm">All our products are authentic and sourced directly from trusted farmers and producers.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600 text-sm">We ensure quick and safe delivery of your products right to your doorstep.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Quality Guaranteed</h3>
+                    <p class="text-gray-600 text-sm">We stand behind the quality of our products with a satisfaction guarantee.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">24/7 Support</h3>
+                    <p class="text-gray-600 text-sm">Our customer service team is always available to address your queries and concerns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-6 border-t">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <!-- Company Info -->
+                <div>
+                    <a href="/" class="flex items-center mb-4">
+                        <img src="images/sapora BD (1).jpg" alt="SapCry" class="h-8">
+                    </a>
+                    <p class="text-gray-600 text-sm mb-4">Quality products with reliable service - your trusted partner</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-green-500">Home</a></li>
+                        <li><a href="shop.html" class="text-gray-600 hover:text-green-500">Shop</a></li>
+                        <li><a href="cart.html" class="text-gray-600 hover:text-green-500">Cart</a></li>
+                        <li><a href="account.html" class="text-gray-600 hover:text-green-500">My Account</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-green-500">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-green-500">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h3 class="font-bold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html?category=pitha" class="text-gray-600 hover:text-green-500">পিঠা | Pitha</a></li>
+                        <li><a href="shop.html?category=misti" class="text-gray-600 hover:text-green-500">মিষ্টি | Misti</a></li>
+                        <li><a href="shop.html?category=chatni" class="text-gray-600 hover:text-green-500">চাটনি | Chatni</a></li>
+                        <li><a href="shop.html?category=oil" class="text-gray-600 hover:text-green-500">তেল | Oil</a></li>
+                        <li><a href="shop.html?category=history" class="text-gray-600 hover:text-green-500">ইতিহাস | History</a></li>
+                        <li><a href="shop.html?category=others" class="text-gray-600 hover:text-green-500">অন্যান্য | Others</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-500"></i>
+                            <span class="text-gray-600">123/A, XYZ Complex, Street Address, City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-green-500"></i>
+                            <span class="text-gray-600">+123-456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-500"></i>
+                            <span class="text-gray-600">info@sapcry.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="border-t border-gray-200 pt-8 pb-4">
+                <h3 class="font-bold mb-4">Newsletter</h3>
+                <p class="text-gray-600 mb-4">Subscribe for new promotions & offers</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email address" class="flex-1 border border-gray-300 rounded-l-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button class="bg-green-500 text-white px-4 py-2 rounded-r-md hover:bg-green-600">Subscribe</button>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-200 pt-6 mt-6 flex flex-wrap justify-between items-center">
+                <p class="text-gray-600 text-sm">&copy; 2023 SapCry. All rights reserved</p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <img src="images/payments.png" alt="Visa" class="h-6">
+                    <img src="images/mastercard.png" alt="" class="h-6">
+                    <img src="images/skrill.png" alt="" class="h-6">
+                    <img src="images/nagad.png" alt="" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Add shopping cart panel -->
+    <div id="shopping-cart-panel" class="fixed top-0 right-0 h-full w-0 bg-white shadow-lg overflow-hidden transition-all duration-300 z-50">
+        <div class="p-4 flex justify-between items-center border-b">
+            <h2 class="text-xl font-bold">Shopping cart</h2>
+            <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                <span class="mr-2">Close</span> ×
+            </button>
+        </div>
+        
+        <div id="cart-items" class="p-4 overflow-y-auto max-h-[70vh]">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        
+        <div class="border-t p-4 mt-auto">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-semibold">Subtotal:</span>
+                <span id="cart-panel-subtotal" class="text-orange-500 font-bold"></span>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-2">
+                <a href="cart.html" class="block text-center py-2 px-4 border border-gray-300 rounded hover:bg-gray-100 transition">
+                    VIEW CART
+                </a>
+                <a href="checkout.html" class="block text-center py-2 px-4 bg-orange-500 text-white rounded hover:bg-orange-600 transition">
+                    CHECKOUT
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Shopping cart panel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartIcon = document.querySelector('a[href="cart.html"]');
+            const cartPanel = document.getElementById('shopping-cart-panel');
+            const closeCartBtn = document.getElementById('close-cart');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartPanelSubtotal = document.getElementById('cart-panel-subtotal');
+            
+            // Show cart panel when cart icon is clicked
+            if (cartIcon) {
+                cartIcon.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openCartPanel();
+                });
+            }
+            
+            // Close cart panel when close button is clicked
+            if (closeCartBtn) {
+                closeCartBtn.addEventListener('click', closeCartPanel);
+            }
+            
+            // Close cart panel when clicking outside
+            document.addEventListener('click', function(e) {
+                if (cartPanel && cartPanel.style.width === '350px' && 
+                    !cartPanel.contains(e.target) && 
+                    !cartIcon.contains(e.target)) {
+                    closeCartPanel();
+                }
+            });
+            
+            function openCartPanel() {
+                cartPanel.style.width = '350px';
+                renderCartItems();
+                // Prevent body scrolling when cart is open
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeCartPanel() {
+                cartPanel.style.width = '0';
+                // Re-enable body scrolling
+                document.body.style.overflow = 'auto';
+            }
+            
+            function renderCartItems() {
+                // Get cart from localStorage
+                const cart = JSON.parse(localStorage.getItem('saporaBDCart')) || [];
+                
+                if (cartItemsContainer) {
+                    // Clear existing items
+                    cartItemsContainer.innerHTML = '';
+                    
+                    if (cart.length === 0) {
+                        // Show empty cart message
+                        cartItemsContainer.innerHTML = `
+                            <div class="text-center py-8">
+                                <p class="text-gray-500">Your cart is empty</p>
+                                <a href="shop.html" class="text-green-500 hover:underline">Continue shopping</a>
+                            </div>
+                        `;
+                        
+                        if (cartPanelSubtotal) {
+                            cartPanelSubtotal.textContent = '0৳';
+                        }
+                        
+                        return;
+                    }
+                    
+                    // Add each cart item
+                    let subtotal = 0;
+                    
+                    cart.forEach(item => {
+                        const itemTotal = item.price * item.quantity;
+                        subtotal += itemTotal;
+                        
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'flex items-center border-b border-gray-200 py-3';
+                        itemElement.innerHTML = `
+                            <div class="w-16 h-16 flex-shrink-0">
+                                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="ml-3 flex-grow">
+                                <h3 class="text-sm font-medium">${item.name}</h3>
+                                <div class="flex items-center mt-2">
+                                    <button class="decrease-quantity px-2 py-1 border border-gray-300 rounded-l text-xs" data-id="${item.id}">-</button>
+                                    <span class="px-3 py-1 border-t border-b border-gray-300 text-sm">${item.quantity}</span>
+                                    <button class="increase-quantity px-2 py-1 border border-gray-300 rounded-r text-xs" data-id="${item.id}">+</button>
+                                    <span class="ml-3 text-sm text-gray-600">× ${item.price}৳</span>
+                                </div>
+                            </div>
+                            <div class="ml-2">
+                                <span class="font-medium">${itemTotal}৳</span>
+                            </div>
+                            <button class="remove-item ml-2 text-gray-400 hover:text-red-500" data-id="${item.id}">
+                                ×
+                            </button>
+                        `;
+                        
+                        cartItemsContainer.appendChild(itemElement);
+                        
+                        // Add remove item functionality
+                        const removeButton = itemElement.querySelector('.remove-item');
+                        removeButton.addEventListener('click', function() {
+                            removeCartItem(item.id);
+                        });
+                    });
+                    
+                    // Update subtotal
+                    if (cartPanelSubtotal) {
+                        cartPanelSubtotal.textContent = `${subtotal}৳`;
+                    }
+                    
+                    // Add quantity change functionality
+                    setupQuantityControls();
+                }
+            }
+            
+            function removeCartItem(itemId) {
+                // Get current cart
+                let cart = JSON.parse(localStorage.getItem('saporaBDCart')) || [];
+                
+                // Remove the item
+                cart = cart.filter(item => item.id != itemId);
+                
+                // Save updated cart
+                localStorage.setItem('saporaBDCart', JSON.stringify(cart));
+                
+                // Re-render cart items
+                renderCartItems();
+                
+                // Update cart count in header
+                updateCartCount();
+            }
+            
+            function setupQuantityControls() {
+                // Add event listeners to quantity adjustment buttons
+                const decreaseButtons = document.querySelectorAll('.decrease-quantity');
+                const increaseButtons = document.querySelectorAll('.increase-quantity');
+                
+                decreaseButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const itemId = this.getAttribute('data-id');
+                        updateItemQuantity(itemId, -1);
+                    });
+                });
+                
+                increaseButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const itemId = this.getAttribute('data-id');
+                        updateItemQuantity(itemId, 1);
+                    });
+                });
+            }
+            
+            function updateItemQuantity(itemId, change) {
+                // Get current cart
+                let cart = JSON.parse(localStorage.getItem('saporaBDCart')) || [];
+                
+                // Find the item
+                const itemIndex = cart.findIndex(item => item.id == itemId);
+                
+                if (itemIndex !== -1) {
+                    // Update quantity
+                    let newQuantity = cart[itemIndex].quantity + change;
+                    
+                    // If quantity is 0 or less, remove item
+                    if (newQuantity <= 0) {
+                        removeCartItem(itemId);
+                        return;
+                    }
+                    
+                    // Update item quantity
+                    cart[itemIndex].quantity = newQuantity;
+                    
+                    // Save updated cart
+                    localStorage.setItem('saporaBDCart', JSON.stringify(cart));
+                    
+                    // Re-render cart items
+                    renderCartItems();
+                    
+                    // Update cart count in header
+                    updateCartCount();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

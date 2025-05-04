@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Sapora BD | Bengali Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cart-item img {
+            object-fit: cover;
+            border-radius: 4px;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .remove-item {
+            font-size: 14px;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .quantity-controls button {
+            width: 30px;
+            height: 30px;
+            background: #f8fafc;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .quantity-controls input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm relative">
+        <div class="container mx-auto px-4 py-4 flex items-center">
+            <a href="index.html" class="flex items-center">
+                <span class="text-xl font-semibold">Sapora BD</span>
+            </a>
+            
+            <nav class="ml-8 flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-green-500">Home</a>
+                <a href="shop.html" class="text-gray-700 hover:text-green-500">Shop</a>
+            </nav>
+            
+            <div class="flex-1 max-w-md mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Search products..." class="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-green-500">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <a href="cart.html" class="ml-6 text-gray-700 hover:text-green-500 relative">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Checkout Progress Indicator -->
+    <div class="w-full bg-blue-700 py-4 text-center">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-center text-white text-lg">
+                <span class="text-white font-bold border-b-2 border-white">SHOPPING CART</span>
+                <span class="mx-3">→</span>
+                <a href="checkout.html" class="text-white hover:text-gray-200">CHECKOUT</a>
+                <span class="mx-3">→</span>
+                <span class="text-white opacity-70 cursor-not-allowed">ORDER COMPLETE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Content -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold mb-6">Shopping cart</h1>
+        
+        <div class="bg-white shadow-sm rounded-lg overflow-hidden">
+            <!-- Empty Cart Message (Hidden when cart has items) -->
+            <div id="empty-cart-message" class="hidden py-16 text-center">
+                <p class="text-gray-500 mb-4">Your cart is empty</p>
+                <a href="shop.html" class="inline-block bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-md">
+                    Continue Shopping
+                </a>
+            </div>
+            
+            <!-- Cart Items Container -->
+            <div id="cart-items-container" class="divide-y divide-gray-200">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            
+            <!-- Cart Totals and Checkout -->
+            <div class="p-6 border-t border-gray-200">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                    <!-- Cart Total -->
+                    <div class="mb-4 md:mb-0">
+                        <div class="flex items-center">
+                            <span class="text-gray-700 mr-4">Subtotal:</span>
+                            <span id="cart-subtotal" class="text-xl font-bold text-orange-500">2,000৳</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Checkout Button -->
+                    <div class="flex space-x-4">
+                        <a href="shop.html" class="block text-center bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-6 rounded-md">
+                            VIEW CART
+                        </a>
+                        <a href="checkout.html" id="checkout-button" class="block text-center bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-md">
+                            CHECKOUT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Shipping Options -->
+        <div class="mt-8 bg-white shadow-sm rounded-lg p-6">
+            <h2 class="text-lg font-semibold mb-4">Shipping</h2>
+            
+            <div class="space-y-3">
+                <div class="flex items-center">
+                    <input type="radio" id="shipping-inside" name="shipping" value="inside" class="mr-2" checked>
+                    <label for="shipping-inside">ঢাকার ভিতরে: <span class="font-medium">80৳</span></label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" id="shipping-outside" name="shipping" value="outside" class="mr-2">
+                    <label for="shipping-outside">ঢাকার বাইরে: <span class="font-medium">60৳</span></label>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">Shipping to <span id="shipping-location">ajeb</span>. <a href="#" id="change-address" class="text-orange-500 hover:underline">Change address</a></p>
+            </div>
+            
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <div class="flex items-center justify-between">
+                    <span class="text-lg font-semibold">Total</span>
+                    <span id="cart-total" class="text-xl font-bold text-orange-500">2,000৳</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-6 border-t mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <!-- Company Info -->
+                <div>
+                    <a href="index.html" class="flex items-center mb-4">
+                        <span class="text-xl font-semibold">Sapora BD</span>
+                    </a>
+                    <p class="text-gray-600 text-sm mb-4">Quality Bengali products with reliable service - your trusted partner</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-green-500">Home</a></li>
+                        <li><a href="shop.html" class="text-gray-600 hover:text-green-500">Shop</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-green-500">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-green-500">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="font-bold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-green-500">FAQ</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600">123 Street, Dhaka, Bangladesh</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600">+880 1700 000000</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600">info@saporabd.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-6 border-t border-gray-200 text-center">
+                <p class="text-gray-600 text-sm">© 2023 Sapora BD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="cart.js"></script>
+</body>
+</html> 

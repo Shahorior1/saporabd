@@ -1,0 +1,125 @@
+{
+  "shipping_options": {
+    "inside_dhaka": {
+      "name": "ঢাকার ভিতরে",
+      "cost": 80,
+      "delivery_time": "24 ঘন্টা",
+      "default": true
+    },
+    "outside_dhaka": {
+      "name": "ঢাকার বাইরে",
+      "cost": 60,
+      "delivery_time": "2-3 দিন",
+      "default": false
+    }
+  },
+  "divisions": [
+    {
+      "id": "dhaka",
+      "name": "ঢাকা",
+      "shipping_zone": "inside_dhaka",
+      "districts": [
+        "ঢাকা মহানগর",
+        "গাজীপুর",
+        "নারায়ণগঞ্জ",
+        "মানিকগঞ্জ",
+        "মুন্সিগঞ্জ",
+        "নরসিংদী"
+      ]
+    },
+    {
+      "id": "chittagong",
+      "name": "চট্টগ্রাম",
+      "shipping_zone": "outside_dhaka",
+      "districts": [
+        "চট্টগ্রাম মহানগর",
+        "কক্সবাজার",
+        "কুমিল্লা",
+        "ফেনী",
+        "নোয়াখালী",
+        "লক্ষ্মীপুর",
+        "চাঁদপুর"
+      ]
+    },
+    {
+      "id": "rajshahi",
+      "name": "রাজশাহী",
+      "shipping_zone": "outside_dhaka",
+      "districts": [
+        "রাজশাহী",
+        "চাঁপাইনবাবগঞ্জ",
+        "নাটোর",
+        "পাবনা",
+        "সিরাজগঞ্জ",
+        "বগুড়া",
+        "জয়পুরহাট"
+      ]
+    },
+    {
+      "id": "khulna",
+      "name": "খুলনা",
+      "shipping_zone": "outside_dhaka",
+      "districts": [
+        "খুলনা",
+        "বাগেরহাট",
+        "সাতক্ষীরা",
+        "যশোর",
+        "নড়াইল",
+        "মাগুরা",
+        "কুষ্টিয়া",
+        "মেহেরপুর",
+        "চুয়াডাঙ্গা"
+      ]
+    },
+    {
+      "id": "barishal",
+      "name": "বরিশাল",
+      "shipping_zone": "outside_dhaka",
+      "districts": [
+        "বরিশাল",
+        "পিরোজপুর",
+        "ভোলা",
+        "পটুয়াখালী",
+        "বরগুনা",
+        "ঝালকাঠি"
+      ]
+    },
+    {
+      "id": "sylhet",
+      "name": "সিলেট",
+      "shipping_zone": "outside_dhaka",
+      "districts": [
+        "সিলেট",
+        "মৌলভীবাজার",
+        "হবিগঞ্জ",
+        "সুনামগঞ্জ"
+      ]
+    },
+    {
+      "id": "rangpur",
+      "name": "রংপুর",
+      "shipping_zone": "outside_dhaka",
+      "districts": [
+        "রংপুর",
+        "দিনাজপুর",
+        "পঞ্চগড়",
+        "ঠাকুরগাঁও",
+        "নীলফামারী",
+        "লালমনিরহাট",
+        "কুড়িগ্রাম",
+        "গাইবান্ধা"
+      ]
+    },
+    {
+      "id": "mymensingh",
+      "name": "ময়মনসিংহ",
+      "shipping_zone": "outside_dhaka",
+      "districts": [
+        "ময়মনসিংহ",
+        "জামালপুর",
+        "শেরপুর",
+        "নেত্রকোনা"
+      ]
+    }
+  ]
+} 

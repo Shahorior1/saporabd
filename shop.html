@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Sapora BD | Bengali Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm relative">
+        <div class="bg-image bg-image-header"></div>
+        <div class="container mx-auto px-4 py-4 flex items-center relative z-10">
+            <a href="index.html" class="flex items-center">
+                <span class="text-xl font-semibold">Sapora BD</span>
+            </a>
+            
+            <nav class="ml-8 flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-green-500">Home</a>
+                <a href="shop.html" class="text-gray-700 hover:text-green-500 font-medium">Shop</a>
+            </nav>
+            
+            <div class="flex-1 max-w-md mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Search products..." class="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500" id="search-input">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-green-500" id="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <a href="cart.html" class="ml-6 text-gray-700 hover:text-green-500 relative">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Shop Banner -->
+    <section class="py-8 bg-green-50">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold mb-2">Shop All Products</h1>
+            <div class="flex items-center text-sm text-gray-500">
+                <a href="index.html" class="hover:text-green-500">Home</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-700 font-medium">Shop</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Shop by Category Section -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Shop by Category</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Category 1 -->
+                <a href="?category=pitha" class="category-card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition hover:bg-green-50 border border-gray-200 hover:border-green-300">
+                    <div class="p-4 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 transition-all hover:bg-green-200">
+                            <i class="fas fa-cookie text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-medium">পিঠা | Pitha</h3>
+                        <p class="text-xs text-gray-500 mt-1">Traditional cakes</p>
+                    </div>
+                </a>
+                
+                <!-- Category 2 -->
+                <a href="?category=sweets" class="category-card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition hover:bg-green-50 border border-gray-200 hover:border-green-300">
+                    <div class="p-4 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 transition-all hover:bg-green-200">
+                            <i class="fas fa-candy-cane text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-medium">মিষ্টি | Sweets</h3>
+                        <p class="text-xs text-gray-500 mt-1">Bengali sweets</p>
+                    </div>
+                </a>
+                
+                <!-- Category 3 -->
+                <a href="?category=chatni" class="category-card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition hover:bg-green-50 border border-gray-200 hover:border-green-300">
+                    <div class="p-4 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 transition-all hover:bg-green-200">
+                            <i class="fas fa-pepper-hot text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-medium">চাটনি | Chatni</h3>
+                        <p class="text-xs text-gray-500 mt-1">Traditional chutneys</p>
+                    </div>
+                </a>
+                
+                <!-- Category 4 -->
+                <a href="?category=oil" class="category-card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition hover:bg-green-50 border border-gray-200 hover:border-green-300">
+                    <div class="p-4 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 transition-all hover:bg-green-200">
+                            <i class="fas fa-oil-can text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-medium">তেল | Oil</h3>
+                        <p class="text-xs text-gray-500 mt-1">Natural oils</p>
+                    </div>
+                </a>
+                
+                <!-- Category 5 -->
+                <a href="?category=history" class="category-card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition hover:bg-green-50 border border-gray-200 hover:border-green-300">
+                    <div class="p-4 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 transition-all hover:bg-green-200">
+                            <i class="fas fa-book text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-medium">ইতিহাস | History</h3>
+                        <p class="text-xs text-gray-500 mt-1">Historical items</p>
+                    </div>
+                </a>
+                
+                <!-- Category 6 -->
+                <a href="?category=others" class="category-card bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition hover:bg-green-50 border border-gray-200 hover:border-green-300">
+                    <div class="p-4 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 transition-all hover:bg-green-200">
+                            <i class="fas fa-box text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-medium">অন্যান্য | Others</h3>
+                        <p class="text-xs text-gray-500 mt-1">Other products</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter and Products -->
+    <section class="py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar filters -->
+                <div class="w-full lg:w-1/4">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h2 class="text-lg font-semibold mb-4">Categories</h2>
+                        <ul class="space-y-2" id="category-filters">
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" value="all" checked>
+                                    <span class="ml-2">All Products</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" value="pitha">
+                                    <span class="ml-2">পিঠা | Pitha</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" value="sweets">
+                                    <span class="ml-2">মিষ্টি | Sweets</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" value="chatni">
+                                    <span class="ml-2">চাটনি | Chatni</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" value="oil">
+                                    <span class="ml-2">তেল | Oil</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" value="history">
+                                    <span class="ml-2">ইতিহাস | History</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" value="others">
+                                    <span class="ml-2">অন্যান্য | Others</span>
+                                </label>
+                            </li>
+                        </ul>
+                        
+                        <hr class="my-6">
+                        
+                        <h2 class="text-lg font-semibold mb-4">Price Range</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <input type="range" min="0" max="2000" value="2000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" id="price-range">
+                                <div class="flex justify-between mt-2">
+                                    <span class="text-sm text-gray-500">0৳</span>
+                                    <span class="text-sm text-gray-500" id="price-value">2000৳</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 rounded-md transition" id="filter-button">Apply Filter</button>
+                                <button class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 rounded-md transition" id="clear-filters-button">Clear All Filters</button>
+                            </div>
+                        </div>
+                        
+                        <hr class="my-6">
+                        
+                        <h2 class="text-lg font-semibold mb-4">Availability</h2>
+                        <ul class="space-y-2">
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" id="in-stock" checked>
+                                    <span class="ml-2">In Stock</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" id="out-of-stock">
+                                    <span class="ml-2">Out of Stock</span>
+                                </label>
+                            </li>
+                        </ul>
+                        
+                        <hr class="my-6">
+                        
+                        <h2 class="text-lg font-semibold mb-4">Rating</h2>
+                        <ul class="space-y-2">
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" id="rating-5">
+                                    <span class="ml-2 flex">
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" id="rating-4">
+                                    <span class="ml-2 flex">
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="far fa-star text-yellow-400"></i>
+                                        <span class="ml-1">& up</span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox h-4 w-4 text-green-500 rounded" id="rating-3">
+                                    <span class="ml-2 flex">
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="far fa-star text-yellow-400"></i>
+                                        <i class="far fa-star text-yellow-400"></i>
+                                        <span class="ml-1">& up</span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+
+                        <hr class="my-6">
+                        
+                        <h2 class="text-lg font-semibold mb-4">Tags</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="tag-filter px-3 py-1 border border-gray-300 rounded text-sm hover:bg-green-500 hover:text-white hover:border-green-500" data-tag="ponir">Ponir</button>
+                            <button class="tag-filter px-3 py-1 border border-gray-300 rounded text-sm hover:bg-green-500 hover:text-white hover:border-green-500" data-tag="organic">Organic</button>
+                            <button class="tag-filter px-3 py-1 border border-gray-300 rounded text-sm hover:bg-green-500 hover:text-white hover:border-green-500" data-tag="new">New</button>
+                            <button class="tag-filter px-3 py-1 border border-gray-300 rounded text-sm hover:bg-green-500 hover:text-white hover:border-green-500" data-tag="combo">Combo</button>
+                            <button class="tag-filter px-3 py-1 border border-gray-300 rounded text-sm hover:bg-green-500 hover:text-white hover:border-green-500" data-tag="popular">Popular</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products list -->
+                <div class="w-full lg:w-3/4">
+                    <!-- Sort and view options -->
+                    <div class="flex flex-wrap justify-between items-center bg-white p-4 rounded-lg shadow-sm mb-6">
+                        <p class="text-gray-600 mb-2 md:mb-0"><span id="product-count">12</span> products found</p>
+                        <div class="flex items-center space-x-2">
+                            <label class="text-gray-600">Sort by:</label>
+                            <select class="border border-gray-300 rounded py-1 px-2 focus:outline-none focus:ring-1 focus:ring-green-500" id="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name-asc">Name: A to Z</option>
+                                <option value="name-desc">Name: Z to A</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Products grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="products-container">
+                        <!-- Product items will be loaded dynamically -->
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-10">
+                        <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                            <button class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <span class="sr-only">Previous</span>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-green-500 text-sm font-medium text-white hover:bg-green-600">
+                                1
+                            </button>
+                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                2
+                            </button>
+                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                3
+                            </button>
+                            <button class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <span class="sr-only">Next</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-6 border-t mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <!-- Company Info -->
+                <div>
+                    <a href="/" class="flex items-center mb-4">
+                        <img src="images/sapora BD (1).jpg" alt="Sapora BD" class="h-8">
+                    </a>
+                    <p class="text-gray-600 text-sm mb-4">Quality products with reliable service - your trusted partner</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-green-500">Home</a></li>
+                        <li><a href="shop.html" class="text-gray-600 hover:text-green-500">Shop</a></li>
+                        <li><a href="cart.html" class="text-gray-600 hover:text-green-500">Cart</a></li>
+                        <li><a href="account.html" class="text-gray-600 hover:text-green-500">My Account</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-green-500">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-green-500">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h3 class="font-bold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html?category=pitha" class="text-gray-600 hover:text-green-500">পিঠা | Pitha</a></li>
+                        <li><a href="shop.html?category=misti" class="text-gray-600 hover:text-green-500">মিষ্টি | Misti</a></li>
+                        <li><a href="shop.html?category=chatni" class="text-gray-600 hover:text-green-500">চাটনি | Chatni</a></li>
+                        <li><a href="shop.html?category=oil" class="text-gray-600 hover:text-green-500">তেল | Oil</a></li>
+                        <li><a href="shop.html?category=history" class="text-gray-600 hover:text-green-500">ইতিহাস | History</a></li>
+                        <li><a href="shop.html?category=others" class="text-gray-600 hover:text-green-500">অন্যান্য | Others</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-500"></i>
+                            <span class="text-gray-600">123/A, XYZ Complex, Street Address, City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-green-500"></i>
+                            <span class="text-gray-600">+123-456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-500"></i>
+                            <span class="text-gray-600">info@saporabd.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="border-t border-gray-200 pt-8 pb-4">
+                <h3 class="font-bold mb-4">Newsletter</h3>
+                <p class="text-gray-600 mb-4">Subscribe for new promotions & offers</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email address" class="flex-1 border border-gray-300 rounded-l-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button class="bg-green-500 text-white px-4 py-2 rounded-r-md hover:bg-green-600">Subscribe</button>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-200 pt-6 mt-6 flex flex-wrap justify-between items-center">
+                <p class="text-gray-600 text-sm">&copy; 2023 Sapora BD. All rights reserved</p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <img src="images/payments.png" alt="Payment methods" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="shop.js"></script>
+    <script src="shop-fix.js"></script>
+    <script src="debug.js"></script>
+</body>
+</html> 

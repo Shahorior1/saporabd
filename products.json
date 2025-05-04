@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "খেজুর গুড় ও নারিকেল কোকোনাট বরফি",
+    "price": 1300,
+    "currency": "৳",
+    "image": "images/product-khejur.jpg",
+    "description": "Traditional Bengali sweet made with date palm jaggery and coconut",
+    "category": "sweets",
+    "stock": 15,
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "নকশি পিঠা ১ কেজি",
+    "price": 700,
+    "currency": "৳",
+    "image": "images/product-pitha.jpg",
+    "description": "Traditional Bengali rice cake with intricate designs",
+    "category": "traditional",
+    "stock": 20,
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "পুরান ঢাকার বাহারি চমচম",
+    "price": 450,
+    "currency": "৳",
+    "image": "images/product-chomchom.jpg",
+    "description": "Traditional sweet from Old Dhaka",
+    "category": "sweets",
+    "stock": 25,
+    "featured": false
+  },
+  {
+    "id": 4,
+    "name": "পাটিসাপটা",
+    "price": 650,
+    "currency": "৳",
+    "image": "images/product-patisapta.jpg",
+    "description": "Bengali crepes filled with sweetened coconut and khoya",
+    "category": "traditional",
+    "stock": 18,
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "কাঁচাগোল্লা ১ কেজি",
+    "price": 850,
+    "currency": "৳",
+    "image": "images/product-kachagolla.jpg",
+    "description": "Soft and spongy Bengali sweet from Natore",
+    "category": "sweets",
+    "stock": 12,
+    "featured": false
+  },
+  {
+    "id": 6,
+    "name": "ছানার পায়েস",
+    "price": 550,
+    "currency": "৳",
+    "image": "images/product-payes.jpg",
+    "description": "Traditional Bengali dessert made with cottage cheese",
+    "category": "desserts",
+    "stock": 10,
+    "featured": false
+  }
+] 
